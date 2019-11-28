@@ -20,9 +20,16 @@ Start the application with the command
 
 Would You Rather app is goig to be hosted automatically on http://localhost:3000
 
-##Pages
+## Pages
+### 'Login'
+At the beginning user is redirected to login page to sign the application in.
 
-1-) Login Page: At the beginning user is redirected to login page to sign the application in.
-2-) Home Page: After signing in app will redirect the user to home page. User can see all the questions added by other users including active user. Questions are cathegorized into two parts as answered and unanswered. 
-3-) New Question: User adds new question with question title and two options. Text of both options must be filled.
-4-) Leaderboard: Leaderboard page shows the latest status of the scores. At least the user who has answered questions and added questions will be in index according to the sum of answers and questions
+### 'Home'
+After signing in app will redirect the user to home page. User can see all the questions added by other users including active user. Questions are cathegorized into two parts as answered and unanswered. 
+
+### New Question
+User adds new question with question title and two options. Text of both options must be filled.
+
+### Leaderboard
+
+Leaderboard page shows the latest status of the scores. At least the user who has answered questions and added questions will be in index according to the sum of answers and questions
