@@ -34,6 +34,8 @@ class QList extends Component{
             qFiltered = questions.filter(e => e.optionOne.votes.includes(authedUser) || e.optionTwo.votes.includes(authedUser))
         }
 
+        qFiltered = qFiltered.sort((a,b) => (b.timestamp - a.timestamp))
+
         return(
             <div>
                 {qFiltered.map((question) => (

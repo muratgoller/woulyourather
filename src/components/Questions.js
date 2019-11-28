@@ -15,7 +15,14 @@ class Questions extends Component{
         const { questions, authedUser } = this.props
 
         if(qID != undefined){
-            const q = questions.filter(e => e.id == qID)[0]
+            
+            const qfiltered = questions.filter(e => e.id == qID)
+
+            if(qfiltered.length === 0){
+                return '404'
+            }
+
+            const q = qfiltered[0]
 
             var optOneCount = q.optionOne.votes.filter(o => o == authedUser).length
             var optTwoCount = q.optionTwo.votes.filter(o => o == authedUser).length
@@ -62,6 +69,9 @@ class Questions extends Component{
         }
         else if(mode == 'result'){
             return(<QResult qID={qID}></QResult>)
+        }
+        else if(mode === '404'){
+            return(<Redirect to={{pathname: '/404'}}></Redirect>)
         }
     }
 }    

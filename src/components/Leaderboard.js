@@ -8,8 +8,9 @@ import { Redirect } from 'react-router';
 
 class Leaderboard extends Component {
 
-    calculateAnsweredCount = (userID) => {
-
+    componentDidMount() {
+        this.props.mapQuestionsToStore()
+        this.props.mapUsersToStore()
     }
 
     render(){
@@ -88,4 +89,11 @@ function mapStateToProps({questions, users, authedUser}) {
     return { questions: qarray, users: uarray, authedUser: authedUser }
 }
 
-export default connect(mapStateToProps, null)(Leaderboard)
+const mapDispatchToProps = dispatch => {
+    return {
+        mapQuestionsToStore: () => dispatch(mapQuestionsToStore()),
+        mapUsersToStore: () => dispatch(handleInitialData())
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Leaderboard)

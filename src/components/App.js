@@ -5,6 +5,7 @@ import Nav from './Nav'
 import SignIn from './SignIn'
 import Home from './Home'
 import Questions from './Questions'
+import errorPage from './errorPage'
 import Add from './Add'
 import Leaderboard from './Leaderboard'
 import LoadingBar from 'react-redux-loading'
@@ -32,6 +33,9 @@ class App extends Component {
                     </div>
                     <div>
                         <Route path='/leaderboard' exact component={Leaderboard}></Route>
+                    </div>
+                    <div>
+                        <Route path='/404' exact component={errorPage} />
                     </div>
                 </div>
                 </Fragment>
